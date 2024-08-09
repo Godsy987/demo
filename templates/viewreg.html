@@ -1,0 +1,18 @@
+<html>
+<body>
+    <h2>View all user</h2>
+    <table border= 1 width=700>
+        <tr><th>Name</th><th>Email</th><th>Username</th>
+            <th>Update</th><th>Delete</th>
+        </tr>
+        {% for r in reg %}
+        <tr>
+            <td>{{r.name}}</td><td>{{r.phone}}</td><td>{{r.email}}</td>
+            <td>{{r.username}}</td>
+            <td><a href="{% url 'updatereg' r.id %}"> Update</a></td><td>
+                <a href="{% url 'deletereg' r.id %}"> Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
